@@ -10,6 +10,12 @@
   </p>
 </h4>
 
+
+![Watch the video](docs/videos/demo.gif)
+##### Preview
+#
+
+
 ## 🔖 About
 
 Shopping List é um aplicativo que permite a você criar listas de compras, adicionar e remover itens. Foi criado durante o módulo dois do curso de ReactJS da Rocketseat, e foi desenvolvido para fixar os conhecimentos adquiridos durante o curso.
