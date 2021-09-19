@@ -1,6 +1,16 @@
 import { Container } from './styles';
 
-export function Table(){
+interface TableProps {
+    products: {
+        id: number;
+        name: string;
+        price: number;
+        amount: number;
+    }[];
+    removeItem (id: number): void;
+}
+
+export function Table({products, removeItem}: TableProps){
     return (
         <Container>
             <table>
@@ -8,15 +18,27 @@ export function Table(){
                     <tr>
                         <th>Produto</th>
                         <th>Quantidade</th>
-                        <th>Valor</th>
+                        <th>Valor UN</th>
+                        <th>Total</th>
+                        <th>Opções</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Coca-Cola</td>
-                        <td>1</td>
-                        <td>R$ 3,00</td>
-                    </tr>
+                    {
+                        products.map(product => 
+                            <tr key={product.id}>
+                                <td>{product.name}</td>
+                                <td>{product.amount}</td>
+                                <td>R$ {product.price}</td>
+                                <td>R$ {product.price * product.amount}</td>
+                                <td>
+                                    <button type="button" onClick={() => removeItem(product.id)} >
+                                        X
+                                    </button>
+                                </td>
+                            </tr>
+                        )
+                    }
                 </tbody>
             </table> 
         </Container>

@@ -21,6 +21,16 @@ export const Container = styled.main`
             background: var(--element);
             font-weight: 400;        
             color: var(--text-color);
+
+            button {
+                background: transparent;
+                border: 0;
+                color: var(--text-color);
+                font-size: 1.2rem;
+                font-weight: 600;
+                padding: 0rem 1rem;
+                cursor: pointer;
+            }
         }        
     }
 `;
